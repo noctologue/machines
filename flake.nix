@@ -34,7 +34,7 @@
       nixosConfigurations.rabelais = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [
-          ./hosts/rabelais/configuration.nix
+          ./machines/rabelais/configuration.nix
           nixos-hardware.nixosModules.lenovo-thinkpad-t480
           agenix.nixosModules.default
           {
