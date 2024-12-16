@@ -36,6 +36,19 @@
   time.timeZone = "Europe/Paris";
   i18n.defaultLocale = "en_US.UTF-8";
 
+  programs.zsh.enable = true;
+  users.users.pml = {
+    isNormalUser = true;
+    extraGroups = [
+      "wheel"
+      "networkmanager"
+    ];
+    shell = pkgs.zsh;
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG6VU5bCvCJZRRhaxXQQHVD3FwW/GYcRAxmTxyIGBxRt pml@montaigne"
+    ];
+  };
+
   services.resolved = {
     enable = true;
     dnssec = "true";

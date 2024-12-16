@@ -38,18 +38,6 @@
           nixos-hardware.nixosModules.lenovo-thinkpad-t480
           agenix.nixosModules.default
           {
-            users.users.pml = {
-              isNormalUser = true;
-              extraGroups = [
-                "wheel"
-                "networkmanager"
-              ];
-
-              openssh.authorizedKeys.keys = [
-                "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIG6VU5bCvCJZRRhaxXQQHVD3FwW/GYcRAxmTxyIGBxRt pml@montaigne"
-              ];
-            };
-
             age.secrets.wireguard-private-key = {
               file = ./secrets/wireguard-private-rabelais.age;
               owner = "root";
